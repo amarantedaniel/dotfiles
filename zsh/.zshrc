@@ -45,6 +45,7 @@ export PATH=$PATH:$ANDROID_HOME
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 alias prettyjson="python -m json.tool"
+alias kf="killall Finder"
 alias bearch="cd ~/Documents/bearch"
 alias proj="cd ~/Documents/projects"
 alias school="cd ~/Documents/school"
