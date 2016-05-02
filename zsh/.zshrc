@@ -33,6 +33,12 @@ function extract()
 	fi 
 } 
 
+#screen sharing
+function pair() {
+    COMPUTER_IP=$(dscacheutil -q host -a name $1.local | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')    
+    open vnc://$COMPUTER_IP
+}
+
 eval "$(rbenv init -)"
 
 # Postgres
