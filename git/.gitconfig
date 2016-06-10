@@ -52,3 +52,5 @@ cmd = diffmerge $LOCAL $REMOTE
 [core]
 excludesfile = ~/.gitignore_global
 editor = vim
+[commit]
+	template = /Users/daniel/.git_commit_msg.txt
