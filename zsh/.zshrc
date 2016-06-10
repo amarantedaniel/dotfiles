@@ -59,5 +59,6 @@ alias kf="killall Finder"
 alias bearch="cd ~/Documents/bearch"
 alias proj="cd ~/Documents/projects"
 alias school="cd ~/Documents/school"
-
 alias wpoa="curl -4 'http://wttr.in/Porto+Alegre'"
+alias rw="networksetup -setairportpower en0 off && networksetup -setairportpower en0 on"
+
