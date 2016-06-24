@@ -52,5 +52,6 @@ cmd = diffmerge $LOCAL $REMOTE
 [core]
 excludesfile = ~/.gitignore_global
 editor = vim
+pager = diff-so-fancy | less
 [commit]
-	template = /Users/daniel/.git_commit_msg.txt
+template = ~/.git_commit_msg.txt
