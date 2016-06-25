@@ -11,8 +11,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 source $ZSH/oh-my-zsh.sh
 
-function extract() 
-{ 
+function extract() { 
     if [ -f $1 ] ; then 
         case $1 in 
             *.tar.bz2)   tar xvjf $1     ;; 
@@ -41,6 +40,10 @@ function pair() {
         COMPUTER_IP=$(dscacheutil -q host -a name $1.local | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')
         open vnc://$COMPUTER_IP
     fi
+}
+
+function setwp() {
+    sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$1'" && killall Dock
 }
 
 eval "$(rbenv init -)"
