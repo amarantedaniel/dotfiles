@@ -3,7 +3,7 @@ export ZSH=~/.oh-my-zsh
 
 ZSH_THEME="robbyrussell"
 
-plugins=(git)
+plugins=(git zsh-syntax-highlighting)
 
 # User configuration
 
@@ -64,4 +64,5 @@ alias proj="cd ~/Documents/projects"
 alias school="cd ~/Documents/school"
 alias wpoa="curl -4 'http://wttr.in/Porto+Alegre'"
 alias rw="networksetup -setairportpower en0 off && networksetup -setairportpower en0 on"
+alias myip="ipconfig getifaddr en0"
 
