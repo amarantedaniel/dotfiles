@@ -33,6 +33,9 @@ dns = diff --ignore-space-change
 pb = "!f() { git push -u origin $(git rev-parse --abbrev-ref HEAD); }; f"
 cs = "!f() { EDITOR=vim git commit --author=\""${1}" <$(git config user.email)>\" -e -m [#"$2"]; }; f"
 
+please = push --force-with-lease
+commend = commit --amend --no-edit
+
 [push]
 default = simple
 
