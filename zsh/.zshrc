@@ -73,3 +73,8 @@ alias wpoa="curl -4 'http://wttr.in/Porto+Alegre'"
 alias rw="networksetup -setairportpower en0 off && networksetup -setairportpower en0 on"
 alias fixsim="rm ~/Library/Preferences/com.apple.iphonesimulator.plist"
 alias birl="brew"
+alias fixaudio="sudo killall coreaudiod"
+
+. $HOME/.asdf/asdf.sh
+
+. $HOME/.asdf/completions/asdf.bash
