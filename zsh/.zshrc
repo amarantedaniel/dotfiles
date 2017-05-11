@@ -54,8 +54,6 @@ function heckshot() {
     adb shell rm /sdcard/$FILENAME.png
 }
 
-eval "$(rbenv init -)"
-
 # Postgres
 export POSTGRES_HOME=/Applications/Postgres.app/Contents/Versions/9.5/bin
 export PATH=$PATH:$POSTGRES_HOME
