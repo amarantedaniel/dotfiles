@@ -7,7 +7,7 @@ plugins=(git zsh-syntax-highlighting)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -54,6 +54,10 @@ function heckshot() {
     adb shell rm /sdcard/$FILENAME.png
 }
 
+function firebase() {
+    curl -H "Content-type: application/json" -H "Authorization:key=AAAAzzvE2Ec:APA91bECvViEsVlKUybuuvqwqjIph26QdhCyTv4vG1HS_z8Kbo0rHUZy1c7uw8gOo1e68UQmNOZbkorpnMx_Ta-NJG4Co4Ju2Q4L9Fj0mtJVJT9SSnOll-Vj-UVJ-htyNMsqiGr3OrtGfBVruGBc1zXZY5cQIxBpGg" -X GET https://iid.googleapis.com/iid/info/$1\?details\=true | prettyjson
+}
+
 eval "$(rbenv init -)"
 
 # Postgres
@@ -75,3 +79,8 @@ alias wpoa="curl -4 'http://wttr.in/Porto+Alegre'"
 alias rw="networksetup -setairportpower en0 off && networksetup -setairportpower en0 on"
 alias fixsim="rm ~/Library/Preferences/com.apple.iphonesimulator.plist"
 alias birl="brew"
+alias fixaudio="sudo killall coreaudiod"
+
+. $HOME/.asdf/asdf.sh
+
+. $HOME/.asdf/completions/asdf.bash
