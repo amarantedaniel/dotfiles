@@ -59,10 +59,13 @@ export POSTGRES_HOME=/Applications/Postgres.app/Contents/Versions/9.5/bin
 export PATH=$PATH:$POSTGRES_HOME
 
 # Android vars
+
 export ANDROID_HOME=~/Library/Android/sdk
+export NDK_HOME=$ANDROID_HOME/ndk-bundle
 export PATH=$PATH:$ANDROID_HOME
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$NDK_HOME
 
 alias prettyjson="python -m json.tool"
 alias kf="killall Finder"
@@ -77,3 +80,5 @@ alias fixaudio="sudo killall coreaudiod"
 . $HOME/.asdf/asdf.sh
 
 . $HOME/.asdf/completions/asdf.bash
+
+. $HOME/Documents/projects/z/z.sh
