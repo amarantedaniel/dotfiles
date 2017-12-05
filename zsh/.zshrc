@@ -54,6 +54,13 @@ function heckshot() {
     adb shell rm /sdcard/$FILENAME.png
 }
 
+function format() {
+    git diff --name-only | grep -e '\(.*\).swift$' | while read line; do
+        swiftformat $line;
+        # git add $line;
+    done
+}
+
 # Postgres
 export POSTGRES_HOME=/Applications/Postgres.app/Contents/Versions/9.5/bin
 export PATH=$PATH:$POSTGRES_HOME
