@@ -52,17 +52,16 @@ tool = diffmerge
 cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
 trustExitCode = true
 [mergetool]
-keepBackup = false
+	keepBackup = false
 [diff]
-tool = diffmerge
+	tool = diffmerge
 [difftool "diffmerge"]
-cmd = diffmerge $LOCAL $REMOTE
+	cmd = diffmerge $LOCAL $REMOTE
 [core]
-excludesfile = ~/.gitignore_global
-editor = vim
-pager = diff-so-fancy | less
-[commit]
-template = ~/.git_commit_msg.txt
+	excludesfile = ~/.gitignore_global
+	editor = vim
+	pager = diff-so-fancy | less
+
 
 [color "diff-highlight"]
 	oldNormal = red bold
