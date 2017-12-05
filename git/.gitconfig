@@ -33,9 +33,9 @@ dns = diff --ignore-space-change
 pb = "!f() { git push -u origin $(git rev-parse --abbrev-ref HEAD); }; f"
 
 cs = "!f() { \
-		[ \"$#\" -eq 1 ] && EDITOR=vim git duet-commit -v -e -m [#\"$1\"]; \
-		[ \"$#\" -eq 2 ] && git solo $1 && EDITOR=vim git duet-commit -v -e -m [#\"$2\"]; \
-		[ \"$#\" -eq 3 ] && git duet $1 $2 && EDITOR=vim git duet-commit -v -e -m [#\"$3\"]; \
+		[ \"$#\" -eq 1 ] && git duet-commit -v -e -m [#\"$1\"]; \
+		[ \"$#\" -eq 2 ] && git solo $1 && git duet-commit -v -e -m [#\"$2\"]; \
+		[ \"$#\" -eq 3 ] && git duet $1 $2 && git duet-commit -v -e -m [#\"$3\"]; \
       }; f"
 
 please = push --force-with-lease
