@@ -37,6 +37,7 @@ cs = "!f() { \
 	[ \"$#\" -eq 2 ] && git solo $1 && EDITOR=vim git duet-commit -v -e -m [#"$2"]; \
 	[ \"$#\" -eq 3 ] && git duet $1 $2 && EDITOR=vim git duet-commit -v -e -m [#"$3"]; \
       }; f"
+	  
 please = push --force-with-lease
 commend = commit --amend --no-edit
 
