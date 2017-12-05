@@ -37,7 +37,7 @@ cs = "!f() { \
 	[ \"$#\" -eq 2 ] && git solo $1 && EDITOR=vim git duet-commit -v -e -m [#"$2"]; \
 	[ \"$#\" -eq 3 ] && git duet $1 $2 && EDITOR=vim git duet-commit -v -e -m [#"$3"]; \
       }; f"
-	  
+
 please = push --force-with-lease
 commend = commit --amend --no-edit
 
@@ -63,6 +63,7 @@ editor = vim
 pager = diff-so-fancy | less
 [commit]
 template = ~/.git_commit_msg.txt
+
 [color "diff-highlight"]
 	oldNormal = red bold
 	oldHighlight = red bold 52
