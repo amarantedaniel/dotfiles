@@ -83,6 +83,7 @@ alias rw="networksetup -setairportpower en0 off && networksetup -setairportpower
 alias fixsim="rm ~/Library/Preferences/com.apple.iphonesimulator.plist"
 alias birl="brew"
 alias fixaudio="sudo killall coreaudiod"
+alias cat="ccat"
 
 . $HOME/.asdf/asdf.sh
 
