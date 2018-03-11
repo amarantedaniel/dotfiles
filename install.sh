@@ -4,12 +4,13 @@ echo "installing..."
 
 [ -d ~/.oh-my-zsh ] || git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh 
 [ -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ] || git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-
 echo "oh-my-zsh configured"
 
 [ -d ~/.asdf ] || git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.2
-
 echo "asdf configured"
+
+[ ! -f "`which brew`" ] && /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+echo "homebrew installed"
 
 ln -sf $(pwd)/vim/.vimrc ~/.vimrc
 ln -sf $(pwd)/git/.gitconfig ~/.gitconfig
