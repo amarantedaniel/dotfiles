@@ -88,5 +88,3 @@ alias cat="ccat"
 . $HOME/.asdf/asdf.sh
 
 . $HOME/.asdf/completions/asdf.bash
-
-. $HOME/Documents/projects/z/z.sh
