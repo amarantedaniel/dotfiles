@@ -7,6 +7,10 @@ echo "installing..."
 
 echo "oh-my-zsh configured"
 
+[ -d ~/.asdf ] || git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.2
+
+echo "asdf configured"
+
 ln -sf $(pwd)/vim/.vimrc ~/.vimrc
 ln -sf $(pwd)/git/.gitconfig ~/.gitconfig
 ln -sf $(pwd)/git/.gitignore_global ~/.gitignore_global
