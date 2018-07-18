@@ -3,7 +3,7 @@ export ZSH=~/.oh-my-zsh
 
 ZSH_THEME="robbyrussell"
 
-plugins=(git asdf zsh-syntax-highlighting)
+plugins=(git asdf zsh-syntax-highlighting zsh-autosuggestions)
 
 # User configuration
 
@@ -80,3 +80,4 @@ alias fixsim="rm ~/Library/Preferences/com.apple.iphonesimulator.plist"
 alias birl="brew"
 alias fixaudio="sudo killall coreaudiod"
 alias cat="ccat"
+alias nuke="g co . && g boom && g reset --hard"
