@@ -52,6 +52,11 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$NDK_HOME
 
+alias dps='docker ps'
+alias dkup='docker compose up -d'
+alias dall='docker kill $(docker ps -q)'
+alias dps='docker ps'
+alias dpsa='docker ps -a'
 alias prettyjson="python -m json.tool"
 alias kf="killall Finder"
 alias bearch="cd ~/Documents/bearch"
