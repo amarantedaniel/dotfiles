@@ -5,6 +5,8 @@ echo "installing..."
 echo "installing oh-my-zsh..."
 [ -d ~/.oh-my-zsh ] || git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh 
 [ -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ] || git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+[ -d ~/.oh-my-zsh/custom/plugins/deepx ] || git clone git@github.com:GetAmbush/deepx-zsh-plugin.git ~/.oh-my-zsh/custom/plugins/deepx
+[ -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ] || git clone git@github.com:zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 echo "oh-my-zsh installed"
 
 echo "installing asdf..."
