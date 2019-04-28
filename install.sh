@@ -23,3 +23,6 @@ ln -sf $(pwd)/git/.git_commit_msg.txt ~/.git_commit_msg.txt
 ln -sf $(pwd)/git/.git-authors ~/.git-authors
 ln -sf $(pwd)/zsh/.zshrc ~/.zshrc
 echo "files symlinked"
+
+chsh -s $(which zsh)
+
