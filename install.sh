@@ -3,7 +3,7 @@
 echo "installing..."
 
 echo "installing oh-my-zsh..."
-[ -d ~/.oh-my-zsh ] || git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh 
+[ -d ~/.oh-my-zsh ] || git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 [ -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ] || git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 [ -d ~/.oh-my-zsh/custom/plugins/deepx ] || git clone git@github.com:GetAmbush/deepx-zsh-plugin.git ~/.oh-my-zsh/custom/plugins/deepx
 [ -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ] || git clone git@github.com:zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
@@ -24,7 +24,7 @@ ln -sf $(pwd)/git/.gitignore_global ~/.gitignore_global
 ln -sf $(pwd)/git/.git_commit_msg.txt ~/.git_commit_msg.txt
 ln -sf $(pwd)/git/.git-authors ~/.git-authors
 ln -sf $(pwd)/zsh/.zshrc ~/.zshrc
+ln -sf $(pwd)/emacs/.spacemacs ~/.spacemacs
 echo "files symlinked"
 
 chsh -s $(which zsh)
-
