@@ -24,7 +24,8 @@ ln -sf $(pwd)/git/.gitignore_global ~/.gitignore_global
 ln -sf $(pwd)/git/.git_commit_msg.txt ~/.git_commit_msg.txt
 ln -sf $(pwd)/git/.git-authors ~/.git-authors
 ln -sf $(pwd)/zsh/.zshrc ~/.zshrc
-ln -sf $(pwd)/emacs/.spacemacs ~/.spacemacs
+ln -sf $(pwd)/kitty/kitty.conf ~/.config/kitty
+ln -sf $(pwd)/kitty/snazzy.conf ~/.config/kitty
 echo "files symlinked"
 
 chsh -s $(which zsh)

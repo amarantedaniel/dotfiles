@@ -70,3 +70,7 @@ alias f="bundle exec fastlane"
 alias weather="curl -4 'http://wttr.in/Porto+Alegre'"
 alias moon="curl -4 'http://wttr.in/Moon'"
 alias be="cd ~/Development/deepx/brokerage-engine"
+
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
