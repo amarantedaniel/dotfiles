@@ -17,6 +17,8 @@ echo "installing homebrew..."
 [ ! -f "`which brew`" ] && /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 echo "homebrew installed"
 
+brew bundle
+
 echo "symlinking dotfiles..."
 ln -sf $(pwd)/vim/.vimrc ~/.vimrc
 ln -sf $(pwd)/git/.gitconfig ~/.gitconfig
