@@ -1,0 +1,21 @@
+{
+  "workbench.colorTheme": "Gruvbox Dark (Medium)",
+  "editor.formatOnSave": true,
+  "[markdown]": {
+    "editor.formatOnSave": false
+  },
+  "[html]": {
+    "editor.formatOnSave": false
+  },
+  "window.zoomLevel": 0,
+  "cSpell.userWords": [
+    "Participations",
+    "commissionable",
+    "hardcoded",
+    "hoverable",
+    "payor"
+  ],
+  "editor.minimap.enabled": false,
+  "editor.fontFamily": "FiraCode-Retina",
+  "editor.fontLigatures": true
+}
