@@ -43,6 +43,13 @@ function format() {
     done
 }
 
+function generate_changelog() {
+    CARD_ID=$(cut -d'-' -f1 <<< $(git rev-parse --abbrev-ref HEAD));
+    MESSAGE=$(cut -d'-' -f2- <<< "$BRANCH" | sed 's/-/ /g');
+    echo "## [$(date '+%d-%m-%Y')] [`tr '[:lower:]' '[:upper:]' <<< ${MESSAGE:0:1}`${MESSAGE:1}](https://app.clickup.com/$CARD_ID)" | tee /dev/tty | pbcopy
+}
+
+
 # Android vars
 
 export ANDROID_HOME=~/Library/Android/sdk
@@ -51,6 +58,7 @@ export PATH=$PATH:$ANDROID_HOME
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$NDK_HOME
+
 
 alias dps='docker ps'
 alias dkup='docker compose up -d'

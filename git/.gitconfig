@@ -32,7 +32,7 @@ dns = diff --ignore-space-change
 
 pb = "!f() { git push -u origin $(git rev-parse --abbrev-ref HEAD); }; f"
 
-cs = "!f() { EDITOR=vim git commit -e -m [#"$1"]; }; f"
+cs = "!f() { EDITOR=vim git commit -e -m [#$(cut -d'-' -f1 <<< $(git rev-parse --abbrev-ref HEAD))]; }; f"
 
 please = push --force-with-lease
 commend = commit --amend --no-edit
