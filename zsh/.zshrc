@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
-ZSH_THEME="robbyrussell"
+ZSH_THEME=powerlevel10k/powerlevel10k
 
 plugins=(git asdf zsh-syntax-highlighting zsh-autosuggestions deepx)
 
@@ -12,19 +12,19 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 source $ZSH/oh-my-zsh.sh
 
 function extract() {
-    if [ -f $1 ] ; then
+    if [ -f "$1" ] ; then
         case $1 in
-            *.tar.bz2)   tar xvjf $1     ;;
-            *.tar.gz)    tar xvzf $1     ;;
-            *.bz2)       bunzip2 $1      ;;
-            *.rar)       unrar x $1      ;;
-            *.gz)        gunzip $1       ;;
-            *.tar)       tar xvf $1      ;;
-            *.tbz2)      tar xvjf $1     ;;
-            *.tgz)       tar xvzf $1     ;;
-            *.zip)       unzip $1        ;;
-            *.Z)         uncompress $1   ;;
-            *.7z)        7z x $1         ;;
+            *.tar.bz2)   tar xvjf "$1"     ;;
+            *.tar.gz)    tar xvzf "$1"     ;;
+            *.bz2)       bunzip2 "$1"      ;;
+            *.rar)       unrar x "$1"      ;;
+            *.gz)        gunzip "$1"       ;;
+            *.tar)       tar xvf "$1"      ;;
+            *.tbz2)      tar xvjf "$1"     ;;
+            *.tgz)       tar xvzf "$1"     ;;
+            *.zip)       unzip "$1"        ;;
+            *.Z)         uncompress "$1"   ;;
+            *.7z)        7z x "$1"         ;;
             *)           echo "'$1' cannot be extracted via >extract<" ;;
         esac
     else
@@ -37,16 +37,17 @@ function setwp() {
 }
 
 function format() {
-    git diff --name-only | grep -e '\(.*\).swift$' | while read line; do
-        swiftformat $line;
+    git diff --name-only | grep -e '\(.*\).swift$' | while read -r line; do
+        swiftformat "$line";
         # git add $line;
     done
 }
 
 function generate_changelog() {
-    CARD_ID=$(cut -d'-' -f1 <<< $(git rev-parse --abbrev-ref HEAD));
+    BRANCH=$(git rev-parse --abbrev-ref HEAD)
+    CARD_ID=$(cut -d'-' -f1 <<< "$BRANCH");
     MESSAGE=$(cut -d'-' -f2- <<< "$BRANCH" | sed 's/-/ /g');
-    echo "## [$(date '+%d-%m-%Y')] [`tr '[:lower:]' '[:upper:]' <<< ${MESSAGE:0:1}`${MESSAGE:1}](https://app.clickup.com/$CARD_ID)" | tee /dev/tty | pbcopy
+    echo "## [$(date '+%d-%m-%Y')] [$(tr '[:lower:]' '[:upper:]' <<< ${MESSAGE:0:1})${MESSAGE:1}](https://app.clickup.com/t/$CARD_ID)" | tee /dev/tty | pbcopy
 }
 
 

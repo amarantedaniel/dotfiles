@@ -32,7 +32,9 @@ dns = diff --ignore-space-change
 
 pb = "!f() { git push -u origin $(git rev-parse --abbrev-ref HEAD); }; f"
 
-cs = "!f() { EDITOR=vim git commit -e -m [#$(cut -d'-' -f1 <<< $(git rev-parse --abbrev-ref HEAD))]; }; f"
+cs = "!f() { EDITOR=vim git commit -e -m [$(cut -d'-' -f 1,2 <<< $(cut -d'/' -f2 <<< $(git rev-parse --abbrev-ref HEAD)))]; }; f"
+
+delete-merged-branches = "!git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
 please = push --force-with-lease
 commend = commit --amend --no-edit
