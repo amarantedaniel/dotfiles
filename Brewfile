@@ -1,9 +1,12 @@
 brew "ccat"
 brew "diff-so-fancy"
 brew "mas"
+brew "asdf"
 
 tap "homebrew/cask-fonts"
+
 cask "font-fira-code"
+cask "swiftformat-for-xcode"
 
 mas "1Password", id: 1333542190
 mas "Skitch", id: 425955336

@@ -1,13 +1,20 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block, everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
 ZSH_THEME=powerlevel10k/powerlevel10k
 
-plugins=(git asdf zsh-syntax-highlighting zsh-autosuggestions deepx)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions deepx)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -43,14 +50,6 @@ function format() {
     done
 }
 
-function generate_changelog() {
-    BRANCH=$(git rev-parse --abbrev-ref HEAD)
-    CARD_ID=$(cut -d'-' -f1 <<< "$BRANCH");
-    MESSAGE=$(cut -d'-' -f2- <<< "$BRANCH" | sed 's/-/ /g');
-    echo "## [$(date '+%d-%m-%Y')] [$(tr '[:lower:]' '[:upper:]' <<< ${MESSAGE:0:1})${MESSAGE:1}](https://app.clickup.com/t/$CARD_ID)" | tee /dev/tty | pbcopy
-}
-
-
 # Android vars
 
 export ANDROID_HOME=~/Library/Android/sdk
@@ -68,8 +67,8 @@ alias dps='docker ps'
 alias dpsa='docker ps -a'
 alias prettyjson="python -m json.tool"
 alias kf="killall Finder"
-alias bearch="cd ~/Development/deepx"
-alias proj="cd ~/Development/proj"
+alias deepx="cd ~/Development/deepx"
+alias misc="cd ~/Development/misc"
 alias wpoa="curl -4 'http://wttr.in/Porto+Alegre'"
 alias rw="networksetup -setairportpower en0 off && networksetup -setairportpower en0 on"
 alias cat="ccat"
@@ -78,8 +77,14 @@ alias p="bundle exec pod"
 alias f="bundle exec fastlane"
 alias weather="curl -4 'http://wttr.in/Porto+Alegre'"
 alias moon="curl -4 'http://wttr.in/Moon'"
-alias be="cd ~/Development/deepx/brokerage-engine"
+alias an="cd ~/Development/deepx/anonyome"
+alias mp="cd ~/Development/deepx/birdcall"
 
   export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+. $(brew --prefix asdf)/asdf.sh

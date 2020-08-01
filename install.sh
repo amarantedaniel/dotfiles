@@ -9,10 +9,6 @@ echo "installing oh-my-zsh..."
 [ -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ] || git clone git@github.com:zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 echo "oh-my-zsh installed"
 
-echo "installing asdf..."
-[ -d ~/.asdf ] || git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.2
-echo "asdf installed"
-
 echo "installing homebrew..."
 [ ! -f "$(command -v brew)" ] && /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 echo "homebrew installed"
