@@ -58,6 +58,7 @@ export PATH=$PATH:$ANDROID_HOME
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$NDK_HOME
+export LANG=en_US.UTF-8
 
 
 alias dps='docker ps'
