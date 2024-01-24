@@ -39,10 +39,6 @@ function extract() {
     fi
 }
 
-function setwp() {
-    sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$1'" && killall Dock
-}
-
 function format() {
     git diff --name-only | grep -e '\(.*\).swift$' | while read -r line; do
         swiftformat "$line";
@@ -81,12 +77,11 @@ alias moon="curl -4 'http://wttr.in/Moon'"
 alias an="cd ~/Development/deepx/anonyome"
 alias mp="cd ~/Development/deepx/birdcall"
 
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
 . $(brew --prefix asdf)/libexec/asdf.sh
 . $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
+
+source "$HOME/.cargo/env"

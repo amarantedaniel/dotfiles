@@ -38,6 +38,8 @@ oops = "!f() { git add . && git commit --amend --no-edit && git push; }; f"
 
 delete-merged-branches = "!git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
+descagar = reflog
+
 please = push --force-with-lease
 commend = commit --amend --no-edit
 
@@ -59,7 +61,7 @@ trustExitCode = true
 	cmd = diffmerge $LOCAL $REMOTE
 [core]
 	excludesfile = ~/.gitignore_global
-	editor = vim
+	editor = hx
 	pager = diff-so-fancy | less
 
 
