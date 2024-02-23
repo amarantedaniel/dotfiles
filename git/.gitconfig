@@ -12,7 +12,7 @@ st = status -sb
 co = checkout
 
 prb = pull -r
-prbm = pull --rebase origin master
+prbm = pull --rebase origin main
 
 a  = add -A
 ap = add -pa
@@ -42,6 +42,7 @@ descagar = reflog
 
 please = push --force-with-lease
 commend = commit --amend --no-edit
+la = "!git config -l | grep alias | cut -c 7-"
 
 [push]
 default = simple
@@ -70,3 +71,6 @@ trustExitCode = true
 	oldHighlight = red bold 52
 	newNormal = green bold
 	newHighlight = green bold 22
+
+[includeIf "gitdir:~/Development/Truecaller/"]
+	path = ~/Development/Truecaller/.gitconfig

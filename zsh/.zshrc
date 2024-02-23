@@ -74,8 +74,7 @@ alias p="bundle exec pod"
 alias f="bundle exec fastlane"
 alias weather="curl -4 'http://wttr.in/Porto+Alegre'"
 alias moon="curl -4 'http://wttr.in/Moon'"
-alias an="cd ~/Development/deepx/anonyome"
-alias mp="cd ~/Development/deepx/birdcall"
+alias jira='open https://truecaller.atlassian.net/browse/$(git rev-parse --abbrev-ref HEAD | sed "s/^feature\///")'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
