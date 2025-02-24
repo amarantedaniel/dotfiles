@@ -19,8 +19,6 @@ ln -sf "$(pwd)"/vim/.vimrc ~/.vimrc
 ln -sf "$(pwd)"/git/.gitconfig ~/.gitconfig
 ln -sf "$(pwd)"/git/.gitignore_global ~/.gitignore_global
 ln -sf "$(pwd)"/zsh/.zshrc ~/.zshrc
-ln -sf "$(pwd)"/kitty/kitty.conf ~/.config/kitty
-ln -sf "$(pwd)"/kitty/snazzy.conf ~/.config/kitty
 echo "files symlinked"
 
-chsh -s "$(command -v zsh)"
+[ "$SHELL" != "$(command -v zsh)" ] && chsh -s "$(command -v zsh)"
