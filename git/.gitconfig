@@ -11,7 +11,8 @@ ui = auto
 st = status -sb
 co = checkout
 
-prb = pull -r
+cm = checkout main
+prb = pull -r --prune
 prbm = pull --rebase origin main
 
 a  = add -A
@@ -62,7 +63,7 @@ trustExitCode = true
 	cmd = diffmerge $LOCAL $REMOTE
 [core]
 	excludesfile = ~/.gitignore_global
-	editor = hx
+	editor = vim
 	pager = diff-so-fancy | less
 
 
@@ -71,6 +72,3 @@ trustExitCode = true
 	oldHighlight = red bold 52
 	newNormal = green bold
 	newHighlight = green bold 22
-
-[includeIf "gitdir:~/Development/Truecaller/"]
-	path = ~/Development/Truecaller/.gitconfig
