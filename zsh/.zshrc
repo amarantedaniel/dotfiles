@@ -10,11 +10,11 @@ export ZSH=~/.oh-my-zsh
 
 ZSH_THEME=powerlevel10k/powerlevel10k
 
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions deepx)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/Users/daniel/.rbenv/shims"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -79,8 +79,4 @@ alias jira='open https://truecaller.atlassian.net/browse/$(git rev-parse --abbre
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
-. $(brew --prefix asdf)/libexec/asdf.sh
-. $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
-
-source "$HOME/.cargo/env"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
