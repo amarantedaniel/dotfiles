@@ -30,6 +30,9 @@ ln -sf "$(pwd)"/ghostty/config ~/.config/ghostty/config
 
 mkdir -p ~/.config/gh
 ln -sf "$(pwd)"/gh/config.yml ~/.config/gh/config.yml
+
+mkdir -p ~/.config/mise
+ln -sf "$(pwd)"/mise/config.toml ~/.config/mise/config.toml
 echo "files symlinked"
 
 echo "importing iTerm color scheme..."

@@ -1,6 +1,6 @@
 brew "ccat"
 brew "diff-so-fancy"
-brew "asdf"
+brew "mise"
 brew "gh"
 
 cask "font-fira-code"
