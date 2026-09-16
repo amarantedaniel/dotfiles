@@ -19,8 +19,8 @@ a  = add -A
 ap = add -pa
 
 l = log --graph --abbrev-commit --date=relative
-ll = log --graph --abbrev-commit --date=relative --name-status
 lp = log --graph --abbrev-commit --date=relative -p
+cp = cherry-pick
 
 boom = clean -fd
 
@@ -33,11 +33,7 @@ dns = diff --ignore-space-change
 
 pb = "!f() { git push -u origin $(git rev-parse --abbrev-ref HEAD); }; f"
 
-cs = "!f() { EDITOR=vim git commit -e -m $(cut -d'/' -f2 <<< $(git rev-parse --abbrev-ref HEAD)); }; f"
-
-oops = "!f() { git add . && git commit --amend --no-edit && git push; }; f"
-
-delete-merged-branches = "!git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+cs = "!f() { git commit -e -m $(cut -d'/' -f2 <<< $(git rev-parse --abbrev-ref HEAD)); }; f"
 
 descagar = reflog
 
@@ -45,8 +41,10 @@ please = push --force-with-lease
 commend = commit --amend --no-edit
 la = "!git config -l | grep alias | cut -c 7-"
 
+[pull]
+rebase = true
 [push]
-default = simple
+autoSetupRemote = true
 
 [format]
 pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
@@ -64,7 +62,7 @@ trustExitCode = true
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = vim
-	pager = diff-so-fancy | less
+	pager = diff-so-fancy | less --tabs=4 -RFX
 
 
 [color "diff-highlight"]
@@ -72,3 +70,11 @@ trustExitCode = true
 	oldHighlight = red bold 52
 	newNormal = green bold
 	newHighlight = green bold 22
+
+[includeIf "gitdir:**/Truecaller/**/.git"]
+  	path = ~/.gitconfig.truecaller
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

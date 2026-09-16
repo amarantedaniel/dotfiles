@@ -14,7 +14,7 @@ plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/Users/daniel/.rbenv/shims"
+export PATH="$HOME/.rbenv/shims:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -42,7 +42,6 @@ function extract() {
 function format() {
     git diff --name-only | grep -e '\(.*\).swift$' | while read -r line; do
         swiftformat "$line";
-        # git add $line;
     done
 }
 
@@ -50,17 +49,17 @@ function format() {
 
 export ANDROID_HOME=~/Library/Android/sdk
 export NDK_HOME=$ANDROID_HOME/ndk-bundle
-export PATH=$PATH:$ANDROID_HOME
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$NDK_HOME
+if [ -d "$ANDROID_HOME" ]; then
+    export PATH=$PATH:$ANDROID_HOME
+    export PATH=$PATH:$ANDROID_HOME/platform-tools
+    export PATH=$PATH:$ANDROID_HOME/tools
+    export PATH=$PATH:$NDK_HOME
+fi
 export LANG=en_US.UTF-8
 
 
-alias dps='docker ps'
 alias dkup='docker compose up -d'
 alias dall='docker kill $(docker ps -q)'
-alias dps='docker ps'
 alias dpsa='docker ps -a'
 alias prettyjson="python -m json.tool"
 alias kf="killall Finder"
@@ -69,7 +68,7 @@ alias misc="cd ~/Development/misc"
 alias wpoa="curl -4 'http://wttr.in/Porto+Alegre'"
 alias rw="networksetup -setairportpower en0 off && networksetup -setairportpower en0 on"
 alias cat="ccat"
-alias nuke="g co . && g boom && g reset --hard"
+alias nuke="git checkout . && git clean -fd && git reset --hard"
 alias p="bundle exec pod"
 alias f="bundle exec fastlane"
 alias weather="curl -4 'http://wttr.in/Porto+Alegre'"
@@ -80,3 +79,12 @@ alias jira='open https://truecaller.atlassian.net/browse/$(git rev-parse --abbre
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="$HOME/.local/bin:$PATH"
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
