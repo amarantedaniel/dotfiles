@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -o errexit -o pipefail -o nounset
+
 echo "installing..."
 
 echo "installing oh-my-zsh..."
@@ -33,6 +35,9 @@ ln -sf "$(pwd)"/gh/config.yml ~/.config/gh/config.yml
 
 mkdir -p ~/.config/mise
 ln -sf "$(pwd)"/mise/config.toml ~/.config/mise/config.toml
+
+mkdir -p ~/.claude
+ln -sf "$(pwd)"/claude/CLAUDE.md ~/.claude/CLAUDE.md
 echo "files symlinked"
 
 echo "importing iTerm color scheme..."
