@@ -37,7 +37,10 @@ mkdir -p ~/.config/mise
 ln -sf "$(pwd)"/mise/config.toml ~/.config/mise/config.toml
 
 mkdir -p ~/.claude
-ln -sf "$(pwd)"/claude/CLAUDE.md ~/.claude/CLAUDE.md
+ln -sf "$(pwd)"/agents/AGENTS.md ~/.claude/CLAUDE.md
+
+mkdir -p ~/.codex
+ln -sf "$(pwd)"/agents/AGENTS.md ~/.codex/AGENTS.md
 echo "files symlinked"
 
 echo "importing iTerm color scheme..."

@@ -35,7 +35,7 @@ cd dotfiles
 | `ghostty/` | `~/.config/ghostty/config` | Ghostty terminal config, same Everforest theme |
 | `gh/` | `~/.config/gh/config.yml` | GitHub CLI settings (no auth — that stays untracked) |
 | `mise/` | `~/.config/mise/config.toml` | Global language version defaults (ruby/node/python) |
-| `claude/` | `~/.claude/CLAUDE.md` | Global Claude Code preferences |
+| `agents/` | `~/.claude/CLAUDE.md`, `~/.codex/AGENTS.md` | Global coding-agent preferences |
 
 ## Shell startup order
 
